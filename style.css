@@ -1,132 +1,381 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
+/* =========================================
+   AUBREY ATELIER - STYLE.CSS
+   ========================================= */
+
+/* ---------- GENERAL PAGE STYLING ---------- */
+
+* {
+    box-sizing: border-box;
 }
 
-body{
-    background:#f8f8f8;
-    color:#333;
+html {
+    scroll-behavior: smooth;
 }
 
-header{
-    background:#111;
-    color:white;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px;
+body {
+    margin: 0;
+    background-color: #f8f3ed;
+    color: #2f2a26;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
 }
 
-nav a{
-    color:white;
-    text-decoration:none;
-    margin-left:20px;
-    transition:0.3s;
+
+/* ---------- HEADER ---------- */
+
+header {
+    background-color: #302b27;
+    color: white;
+    padding: 25px 20px;
+    text-align: center;
 }
 
-nav a:hover{
-    color:gold;
+header h1 {
+    margin: 0 0 20px;
+    font-size: 38px;
+    letter-spacing: 2px;
+    font-family: Georgia, serif;
 }
 
-.hero{
-    height:90vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    background:linear-gradient(to right,#222,#444);
-    color:white;
+
+/* ---------- NAVIGATION - FLEXBOX ---------- */
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    background-color: #b88968;
+    padding: 15px;
+    border-radius: 30px;
+    max-width: 700px;
+    margin: auto;
 }
 
-.hero h2{
-    font-size:50px;
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 17px;
+    transition: 0.3s;
 }
 
-.hero p{
-    width:60%;
-    margin:20px;
-    font-size:20px;
+nav a:hover {
+    color: #302b27;
 }
 
-button{
-    padding:15px 30px;
-    border:none;
-    background:gold;
-    cursor:pointer;
-    border-radius:5px;
-    font-size:18px;
+
+/* ---------- ALL HEADINGS ---------- */
+
+h1,
+h2 {
+    font-family: Georgia, serif;
 }
 
-button:hover{
-    background:orange;
+h2 {
+    color: #8b5e3c;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 25px;
 }
 
-section{
-    padding:70px;
+
+/* ---------- ALL PARAGRAPHS ---------- */
+/* Element selector */
+
+p {
+    font-size: 18px;
+    color: #514942;
 }
 
-h2{
-    text-align:center;
-    margin-bottom:40px;
+
+/* ---------- HERO SECTION ---------- */
+
+.hero {
+    background-color: #ead9c8;
+    text-align: center;
+    padding: 70px 10%;
+    margin: 0;
+    border-bottom: 5px solid #b88968;
 }
 
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+.hero h2 {
+    font-size: 40px;
+    color: #65442f;
 }
 
-.gallery img{
-    width:100%;
-    border-radius:10px;
-    transition:0.4s;
+.hero p {
+    max-width: 900px;
+    margin: 0 auto 30px;
+    font-size: 18px;
 }
 
-.gallery img:hover{
-    transform:scale(1.05);
+
+/* ---------- BUTTON ---------- */
+
+button {
+    background-color: #65442f;
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.profile{
-    display:block;
-    width:220px;
-    margin:auto;
-    border-radius:50%;
-    margin-bottom:20px;
+button:hover {
+    background-color: #b88968;
+    transform: scale(1.05);
 }
 
-#about p{
-    text-align:center;
-    max-width:700px;
-    margin:auto;
-    line-height:1.7;
+
+/* =========================================
+   GALLERY
+   ========================================= */
+
+#gallery {
+    padding: 50px 5%;
 }
 
-#contact{
-    text-align:center;
+
+/* CSS GRID */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1200px;
+    margin: auto;
 }
 
-footer{
-    background:#111;
-    color:white;
-    text-align:center;
-    padding:20px;
+
+/* Style all gallery images */
+
+.gallery img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+
+    border: 5px solid white;
+    padding: 6px;
+    background-color: #d6b99f;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
 }
 
-@media(max-width:768px){
 
-header{
-    flex-direction:column;
+/* Image hover effect */
+
+.gallery img:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
 }
 
-.hero h2{
-    font-size:35px;
+
+/* =========================================
+   ABOUT SECTION
+   ========================================= */
+
+#about {
+    background-color: #e8d8c9;
+    padding: 50px 10%;
+    margin-top: 40px;
+    text-align: center;
+
+    /* Box Model */
+    border: 2px solid #b88968;
 }
 
-.hero p{
-    width:90%;
+#about p {
+    max-width: 950px;
+    margin: 25px auto;
+    text-align: left;
 }
 
+
+/* ---------- PROFILE IMAGE ---------- */
+
+.profile {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+
+    border: 6px double #65442f;
+    padding: 8px;
+    margin: 20px auto;
+
+    display: block;
+
+    border-radius: 50%;
+    background-color: white;
+}
+
+
+/* =========================================
+   CONTACT SECTION
+   ========================================= */
+
+#0790638079 {
+    background-color: #f1e4d7;
+
+    /* Box Model */
+    width: 80%;
+    max-width: 800px;
+
+    border: 2px solid #8b5e3c;
+    padding: 20px;
+    margin: 40px auto;
+
+    text-align: center;
+    border-radius: 15px;
+}
+
+#0790638079 p {
+    font-size: 18px;
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+footer {
+    background-color: #302b27;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+footer p {
+    color: white;
+    margin: 0;
+}
+
+
+/* =========================================
+   CLASS SELECTOR EXAMPLE
+   ========================================= */
+
+.hero,
+#about {
+    border-radius: 0;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+   Question 10
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    /* Navigation becomes vertical */
+    nav {
+        flex-direction: column;
+        gap: 10px;
+        border-radius: 10px;
+    }
+
+    nav a {
+        font-size: 16px;
+    }
+
+
+    /* Smaller heading */
+    header h1 {
+        font-size: 28px;
+    }
+
+    .hero h2 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 27px;
+    }
+
+
+    /* Gallery becomes one column */
+    .gallery {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+
+    /* Images fit the screen */
+    .gallery img {
+        width: 100%;
+        height: auto;
+        max-height: 500px;
+    }
+
+
+    /* About section */
+    #about {
+        padding: 35px 20px;
+    }
+
+
+    /* Profile image */
+    .profile {
+        width: 180px;
+        height: 180px;
+    }
+
+
+    /* Contact section */
+    #0790638079 {
+        width: 90%;
+    }
+
+
+    /* Readable paragraphs */
+    p {
+        font-size: 17px;
+    }
+}
+
+
+/* =========================================
+   EXTRA SMALL SCREENS
+   ========================================= */
+
+@media (max-width: 480px) {
+
+    header {
+        padding: 20px 10px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    .hero {
+        padding: 45px 20px;
+    }
+
+    .hero h2 {
+        font-size: 26px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    #gallery {
+        padding: 35px 15px;
+    }
+
+    .gallery img {
+        height: auto;
+    }
+
+    button {
+        width: 100%;
+    }
 }
